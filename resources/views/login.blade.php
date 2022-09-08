@@ -8,10 +8,15 @@
     <title>Страница авторизации</title>
 </head>
 <body>
-<form action="">
+<form action="{{route('login')}}" method="POST">
+    @if(session()->has('errorSuccess'))
+        <h3>{{session()->get('errorSuccess')}}</h3>
+    @endif
     @csrf
     <input type="text" name="login" placeholder="Ваш логин"><br>
-    <input type="password" name="password" placeholder="ФИО"><br>
+    @error('login')<p>{{$message}}</p>@enderror
+    <input type="password" name="password" placeholder="Ваш пароль"><br>
+    @error('password')<p>{{$message}}</p>@enderror
     <input type="submit" value="Авторизоваться">
 </form>
 </body>
