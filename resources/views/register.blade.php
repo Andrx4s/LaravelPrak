@@ -14,38 +14,68 @@
                     @csrf
                         <div class="mb-3">
                             <label for="inputName" class="form-label">Ваше ФИО</label>
-                            <input type="email"
+                            <input type="text"
                                    class="form-control @error('fullname') is-invalid @enderror"
                                    id="inputName"
-                                   name="fullname">
+                                   name="fullname"
+                                   aria-describedby="invalidFullname">
+                            @error('fullname')
+                            <div id="invalidFullname" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputLogin" class="form-label">Ваш логин</label>
                             <input type="text"
                                    class="form-control @error('login') is-invalid @enderror"
                                    id="inputLogin"
-                                   name="login">
+                                   name="login"
+                                   aria-describedby="invalidLogin">
+                            @error('login')
+                            <div id="invalidLogin" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputAge" class="form-label">Возраст</label>
                             <input type="number"
                                    class="form-control @error('age') is-invalid @enderror"
                                    id="inputAge"
-                                   name="age">
+                                   name="age"
+                                   aria-describedby="invalidAge">
+                            @error('age')
+                            <div id="invalidAge" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputAddress" class="form-label">Ваш адрес</label>
                             <input type="text"
                                    class="form-control @error('address') is-invalid @enderror"
                                    id="inputAddress"
-                                   name="address">
-                        </div>
+                                   name="address"
+                                   aria-describedby="invalidAge">
+                            @error('address')
+                            <div id="invalidAge" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                                </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Ваш пароль</label>
                             <input type="password"
                                    class="form-control @error('password') is-invalid @enderror"
                                    id="inputPassword"
-                                   name="password">
+                                   name="password"
+                                   aria-describedby="invalidPassword">
+                            @error('password')
+                            <div id="invalidPassword" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputPasswordConfirmation" class="form-label">Повторите ваш пароль</label>
